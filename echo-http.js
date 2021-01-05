@@ -13,16 +13,14 @@ const server = http.createServer((request, response) => {
     Headers:
 
 ${
-        Object.entries(request.headers).map((key, value) => {
-            // value is just a number and key is the entire header
-            // return `${key}: ${value}
-            return `${key.join(": ")}
-`
+        Object.entries(request.headers).map(([key, value]) => {
+            return `${key}: ${value}
+`;
         }).join("\n")
 }
     Body:
 
-`)
+`);
     request.pipe(response);
 });
 
