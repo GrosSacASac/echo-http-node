@@ -8,7 +8,7 @@ const server = http.createServer((request, response) => {
     // console.log(request.headers);
     response.setHeader(`Content-Type`, `text/plain`);
     response.writeHead(200);
-    response.write(`    Method: ${request.method}
+    response.write(`${request.url}    Method: ${request.method}
 
     Headers:
 
