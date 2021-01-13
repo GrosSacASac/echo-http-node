@@ -13,10 +13,14 @@ const server = http.createServer((request, response) => {
     Headers:
 
 ${
-        Object.entries(request.headers).map(([key, value]) => {
-            return `${key}: ${value}
+        request.rawHeaders.map((x, i) => {
+            if (i %2 === 0) {
+              return x  
+            } else {
+                return `: ${x}
 `;
-        }).join("\n")
+            }
+        }).join("")
 }
     Body:
 
