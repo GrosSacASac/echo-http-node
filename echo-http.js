@@ -4,6 +4,8 @@ import http from "http";
 const PORT = 83;
 
 const server = http.createServer((request, response) => {
+    request.on('error', function () {});
+    response.on('error', function () {});
     // console.log(request.url);
     // console.log(request.headers);
     response.setHeader(`Content-Type`, `text/plain`);
