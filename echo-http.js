@@ -9,6 +9,7 @@ const server = http.createServer((request, response) => {
     // console.log(request.url);
     // console.log(request.headers);
     response.setHeader(`Content-Type`, `text/plain`);
+    response.setHeader(`X-Robots-Tag`, `noindex`);
     response.writeHead(200);
     response.write(`${request.url}    Method: ${request.method}
 
